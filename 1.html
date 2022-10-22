@@ -11,7 +11,7 @@
 </head>
     <body>
         <! Register>
-        <form onsubmit="return checkPassword();" action="">
+        <form action="">
            <div class="container">
             <h1 class="reghead"> Register</h1>
             <hr>
@@ -20,28 +20,13 @@
             <input type="fn" name="fn" placeholder="First Name" id="fn" required>
 
             <label for="password"><b>Password</b></label>
-            <input type="password" maxlength="16" name="password" placeholder="Enter Password" id="password"
+            <input type="password" onChange="onChange()" maxlength="16" name="password" placeholder="Enter Password" id="password"
             pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
              title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
-            <! input type="checkbox" id="check1" onclick="myfunction()">
 
             <label for="cpassword"><b>Confirm Password</b></label>
-            <input type="password" maxlength="16" name="cpassword" placeholder="Confirm Password" id="cpassword" required>
-            <! input type="checkbox" id="check2" onclick="myfunction()">
-
-                    <script>
-                        function checkPassword(){
-                            var1 = document.getElementById(Password);
-                            var2 = document.getElementById(cpassword);
-                                if(var1.value != var2.value){
-                                    alert("Password mismatch");
-                                    return false;
-                                }
-                                else{
-                                    return true;
-                                }
-                        }
-                    </script>
+            <input type="password" onChange="onChange()" maxlength="16" name="cpassword"
+             placeholder="Confirm Password" id="cpassword" title="Please Confirm Password" required>
 
             <hr>
             <button class='reset' type="reset" >Reset</button>
