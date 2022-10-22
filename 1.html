@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+<link rel="stylesheet" href="style.css">
+
+
+</head>
+    <body>
+        <! Register>
+        <form onsubmit="return checkPassword();" action="index.php">
+           <div class="container">
+            <h1 class="reghead"> Register</h1>
+            <hr>
+
+            <label for="fn"><b>First Name</b></label>
+            <input type="fn" name="fn" placeholder="First Name" id="fn" required>
+
+            <label for="password"><b>Password</b></label>
+            <input type="password" maxlength="16" name="password" placeholder="Enter Password" id="password"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+             title="Must contain at least one number and one uppercase and lowercase letter, and at least 8 or more characters" required>
+            <! input type="checkbox" id="check1" onclick="myfunction()">
+
+            <label for="cpassword"><b>Confirm Password</b></label>
+            <input type="password" maxlength="16" name="cpassword" placeholder="Confirm Password" id="cpassword" required>
+            <! input type="checkbox" id="check2" onclick="myfunction()">
+
+                    <script>
+                        function checkPassword(){
+                            var1 = document.getElementById(Password);
+                            var2 = document.getElementById(cpassword);
+                                if(var1.value != var2.value){
+                                    alert("Password mismatch");
+                                    return false;
+                                }
+                                else{
+                                    return true;
+                                }
+                        }
+                    </script>
+
+            <hr>
+            <button class='reset' type="reset" >Reset</button>
+            <hr>
+
+               <form>
+             <button class="rgstrbtn" type="submit" >Register</button>
+                </form>
+            <hr>
+
+           </div>
+        </form>
+        <!Password rules check>
+            <div id="message">
+                <h3>Password must contain the following:</h3>
+                <p id="letter" class="invalid">A <b>lowercase</b> letter</p>
+                <p id="capital" class="invalid">A <b>capital (uppercase)</b> letter</p>
+                <p id="number" class="invalid">A <b>number</b></p>
+                <p id="length" class="invalid">Minimum <b>8 characters</b></p>
+            </div>
+        <script src="script.js?v=h1"></script>
+    </body>
+
+</html>
